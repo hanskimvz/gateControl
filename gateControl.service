@@ -1,0 +1,20 @@
+# /etc/systemd
+[Unit]
+Description=Gate Control Service
+After=multi-user.target
+
+[Service]
+#Type=forking
+PIDFile=/run/GT.pid
+WorkingDirectory=/home/www/gateControl
+ExecStart=/usr/bin/python3 /home/www/gateControl/main.py
+
+#ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/GT.pid
+Restart=always
+RestartSec=60s
+RemainAfterExit=yes
+
+#KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target

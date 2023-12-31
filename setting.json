@@ -1,0 +1,48 @@
+{
+    "CAMERAS": [
+        {
+            "address": "192.168.3.19",
+            "userid": "root",
+            "userpw": "pass",
+            "snapshot_cgi" : "/nvc-cgi/operator/snapshot.fcgi",
+            "DO_cgi" : {
+                "on": "nvc-cgi/admin/param.fcgi?action=update&group=DIDO.DO.Ch0&trig=on",
+                "off": "nvc-cgi/admin/param.fcgi?action=update&group=DIDO.DO.Ch0&trig=off",
+                "trig": "nvc-cgi/admin/param.fcgi?action=update&group=DIDO.DO.Ch0&trigon="
+            },
+            "rs485port": 7101,
+            "fordoor": "y",
+            "forlpr": "y",
+            "window": [500,200,1400,700]
+        },
+        {
+            "address": "192.168.3.31",
+            "userid": "root",
+            "userpw": "pass",
+            "snapshot_cgi" : "/nvc-cgi/operator/snapshot.fcgi",
+            "DO_cgi" : {
+                "on": "nvc-cgi/admin/param.fcgi?action=update&group=DIDO.DO.Ch0&trig=on",
+                "off": "nvc-cgi/admin/param.fcgi?action=update&group=DIDO.DO.Ch0&trig=off",
+                "trig": "nvc-cgi/admin/param.fcgi?action=update&group=DIDO.DO.Ch0&trigon="
+            },            
+            "rs485port": 7101,
+            "fordoor": "n",
+            "forlpr": "n",
+            "window": [0,0,0,0]
+        }
+    ],
+    "MYSQL":{
+        "host": "localhost",
+        "user": "work_user",
+        "pass": "13579",
+        "db_name": "WORK",
+        "log_table": "gate_control",
+        "user_table": "gate_users",
+        "charset":"utf8",
+        "port": 3306
+    },
+    "SERVER":{
+        "host":"",
+        "port":5060
+    }
+}
