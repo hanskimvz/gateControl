@@ -5,7 +5,7 @@ import numpy as np
 import socket
 import requests
 import threading
-from ocr import get_plate_chars
+from tesseract_ocr import get_plate_chars
 import pymysql
 
 

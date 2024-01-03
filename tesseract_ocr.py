@@ -8,7 +8,7 @@ pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 def get_plate_chars(img):
     ts = time.time()
-    MIN_AREA = 80
+    MIN_AREA = 60
     MIN_WIDTH, MIN_HEIGHT = 2, 8
     MIN_RATIO, MAX_RATIO = 0.2, 1.0  #w/h
 
@@ -218,9 +218,9 @@ def get_plate_chars(img):
 
 
 if __name__ == "__main__":
-    x0,y0,x1,y1 = 500,200,1400,700
+    x0,y0,x1,y1 = 800,200,1200,700
     fname = "car.jpg"
-    fname = "res1.jpg"
+    # fname = "res1.jpg"
     img_ori = cv.imread(fname)
     
     # import requests
@@ -229,9 +229,9 @@ if __name__ == "__main__":
     # img_ori = cv.imdecode(image_nparray, cv.IMREAD_COLOR)
 
     img = img_ori[y0:y1,x0:x1]
-    cv.imwrite("res.jpg", img_ori)
+    cv.imwrite("res.jpg", img)
 
-    print (get_plate_chars(img_ori))
+    print (get_plate_chars(img))
 
 
 
